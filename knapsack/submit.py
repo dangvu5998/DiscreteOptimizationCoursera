@@ -257,12 +257,12 @@ def login_dialog(assignment_key, results, credentials_file_location = '_credenti
     while not success:
 
         # stops infinate loop when credentials file is incorrect 
-        # if tries <= 0:
-        #     login, token = login_prompt(credentials_file_location)
-        # else:
-        #     login, token = login_prompt('')
-        login = 'dangvu5998@gmail.com'
-        token = 'Qy3nWJVWXSSjdJgI'
+        if tries <= 0:
+            login, token = login_prompt(credentials_file_location)
+        else:
+            login, token = login_prompt('')
+        # login = 'dangvu5998@gmail.com'
+        # token = 'AYVbk0zPnZ3PVnxhAYVbk0zPnZ3PVnxh'
 
         code, response = submit_solution(assignment_key, login, token, results)
 
